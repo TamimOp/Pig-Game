@@ -27,10 +27,12 @@ const init = function () {
   currentScore = 0;
   activePlayer = 0;
   playing = true;
-  player0El.classList.remove("player--winner");
-  player1El.classList.remove("player--winner");
-  player0El.classList.add("player--active");
-  player1El.classList.remove("player--active");
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove("player--winner");
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.add("player--active");
   diceEl.classList.add("hidden");
   currentScore = 0;
   current0El.textContent = 0;
